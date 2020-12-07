@@ -28,7 +28,7 @@ const updateGist = async(stats) => {
     console.error(`Unable to get gist\n${error}`)
   }
 
-  const lines = []
+  const lines: string[]
   for (let i = 0; i < Math.min(stats.data.languages.length, 4); i++) {
     const data = stats.data.languages[i]
     const { name, percent, text: time } = data
