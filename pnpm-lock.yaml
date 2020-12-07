@@ -7,7 +7,7 @@ devDependencies:
   '@antfu/eslint-config-ts': 0.4.3_eslint@7.15.0+typescript@4.1.2
   '@octokit/types': 6.1.1
   eslint: 7.15.0
-  esno: 0.2.4
+  esno: 0.3.0
   typescript: 4.1.2
 lockfileVersion: 5.2
 packages:
@@ -768,9 +768,9 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==
-  /esbuild-register/1.1.1_esbuild@0.7.22:
+  /esbuild-register/1.1.1_esbuild@0.8.20:
     dependencies:
-      esbuild: 0.7.22
+      esbuild: 0.8.20
       joycon: 2.2.5
       pirates: 4.0.1
       source-map-support: 0.5.19
@@ -780,12 +780,12 @@ packages:
       esbuild: ^0.8.0
     resolution:
       integrity: sha512-hAPWuaUkPDLXCENc/AigJZaaDCvCkpmghRw8XPyT+rk08JHcIgUrmw1uabbUTfa6B6J9Wo2bFufb01JjbmzcfQ==
-  /esbuild/0.7.22:
+  /esbuild/0.8.20:
     dev: true
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-B43SYg8LGWYTCv9Gs0RnuLNwjzpuWOoCaZHTWEDEf5AfrnuDMerPVMdCEu7xOdhFvQ+UqfP2MGU9lxEy0JzccA==
+      integrity: sha512-xXNLXa2SraaAoeTybOMAvOf6KW/DthI3ATXMG+W3yMav1iFpEGvo4XS22AzCPE3rTXbK/7TykxpwI8mD6lYUOg==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -1019,15 +1019,15 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
-  /esno/0.2.4:
+  /esno/0.3.0:
     dependencies:
-      esbuild: 0.7.22
-      esbuild-register: 1.1.1_esbuild@0.7.22
+      esbuild: 0.8.20
+      esbuild-register: 1.1.1_esbuild@0.8.20
       esm: 3.2.25
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-XlgsQe2va257kc1xsZg/X22fRyLVRNkCKEXjONoltA7HeXtmhrQ3n19all0eK0X6YRNE8X9qiVyWV0vMLZvY3w==
+      integrity: sha512-4sF/j8jruQv9jScU8tNkgoDFLjyGxTTB8bmjRmWHyNNygra3WS3X0U1Cc7GuOvfSEjn3NDS57P0LRnzgiupKJg==
   /espree/7.3.1:
     dependencies:
       acorn: 7.4.1
@@ -2179,6 +2179,6 @@ specifiers:
   axios: 0.21.0
   dotenv: 8.2.0
   eslint: ^7.15.0
-  esno: 0.2.4
+  esno: 0.3.0
   typescript: ^4.1.2
   wakatime-client: 2.6.0
