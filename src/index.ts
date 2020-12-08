@@ -1,14 +1,14 @@
 import dotenv from 'dotenv'
 import axios from 'axios'
 import { Octokit } from '@octokit/rest'
-import RANGE from './range'
+import { RANGE } from './range'
 
 dotenv.config()
 
 const gistId = process.env.GIST_ID
 const githubToken = process.env.GH_TOKEN
 const wakatimeApiKey = process.env.WAKATIME_API_KEY
-const range: string = 'last_7_days' as RANGE
+const range: RANGE = RANGE.LAST_7_DAYS
 
 if (!gistId || !githubToken || !wakatimeApiKey)
   throw new Error('Missing some args')
