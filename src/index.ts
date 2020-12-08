@@ -1,24 +1,49 @@
 import dotenv from 'dotenv'
-import { WakaTimeClient, RANGE } from 'wakatime-client'
+import axios from 'axios'
 import { Octokit } from '@octokit/rest'
+import RANGE from './range'
 
 dotenv.config()
 
 const gistId = process.env.GIST_ID
 const githubToken = process.env.GH_TOKEN
 const wakatimeApiKey = process.env.WAKATIME_API_KEY
+const range: string = 'last_7_days' as RANGE
 
 if (!gistId || !githubToken || !wakatimeApiKey)
   throw new Error('Missing some args')
 
-const wakatime = new WakaTimeClient(wakatimeApiKey)
+const wakatime = axios.create({
+  baseURL: 'https://wakatime.com/api/v1/',
+  // Base-64 encode the API Key
+  // https://wakatime.com/developers#introduction
+  headers: {
+    Authorization: `Basic ${Buffer.from(wakatimeApiKey).toString('base64')}`,
+  },
+})
 
 const octokit = new Octokit({ auth: `token ${githubToken}` })
 
 const main = async() => {
-  const stats = await wakatime.getMyStats({ range: RANGE.LAST_7_DAYS })
+  const stats = await getMyStats()
   await updateGist(stats)
 }
+
+const getMyStats = async() => {
+  let wakatimeData
+  try {
+    const response = await wakatime.get(`users/current/stats/${range}`)
+    wakatimeData = response.data
+    wakatimeData.data.languages.forEach((item) => {
+      console.log(`${item?.name}: ${item?.text}`)
+    })
+  }
+  catch (error) {
+    console.error(`Unable to get wakatime\n${error}`)
+  }
+  return wakatimeData
+}
+
 const updateGist = async(stats) => {
   let gist
   try {
@@ -28,7 +53,7 @@ const updateGist = async(stats) => {
     console.error(`Unable to get gist\n${error}`)
   }
 
-  const lines: string[]
+  const lines: string[] = []
   for (let i = 0; i < Math.min(stats.data.languages.length, 4); i++) {
     const data = stats.data.languages[i]
     const { name, percent, text: time } = data

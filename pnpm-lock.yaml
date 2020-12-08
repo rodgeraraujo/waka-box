@@ -2,7 +2,6 @@ dependencies:
   '@octokit/rest': 18.0.12
   axios: 0.21.0
   dotenv: 8.2.0
-  wakatime-client: 2.6.0_axios@0.21.0
 devDependencies:
   '@antfu/eslint-config-ts': 0.4.3_eslint@7.15.0+typescript@4.1.2
   '@octokit/types': 6.1.1
@@ -2142,14 +2141,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==
-  /wakatime-client/2.6.0_axios@0.21.0:
-    dependencies:
-      axios: 0.21.0
-    dev: false
-    peerDependencies:
-      axios: ^0.19.0
-    resolution:
-      integrity: sha512-N8jhuLr4gxYQZUbsIVa8NBoc3+zjddlzeFJECigfLFzkl8YBNu1vWIPy7d8twksHHNCxawv91RV2pYmy8sE+Eg==
   /which/2.0.2:
     dependencies:
       isexe: 2.0.0
@@ -2181,4 +2172,3 @@ specifiers:
   eslint: ^7.15.0
   esno: 0.3.0
   typescript: ^4.1.2
-  wakatime-client: 2.6.0
