@@ -20,9 +20,9 @@
 ### Project setup
 
 1. Fork this repo
-1. Edit the [environment variable](https://github.com/matchai/waka-box/blob/master/.github/workflows/schedule.yml#L13-L15) in `.github/workflows/schedule.yml`:
+1. Edit the [environment variable](https://github.com/hannoeru/waka-box/blob/b2731e4d3443f77b8fc08b5c5d5d668d80421079/.github/workflows/schedule.yml#L22-L24) in `.github/workflows/schedule.yml`:
 
-   - **GIST_ID:** The ID portion from your gist url: `https://gist.github.com/matchai/`**`6d5f84419863089a167387da62dd7081`**.
+   - **GIST_ID:** The ID portion from your gist url: `https://gist.github.com/hannoeru/`**`d053847bdfb018d8e22f1ddd7caddfc4`**.
 
 1. Go to the repo **Settings > Secrets**
 1. Add the following environment variables:
