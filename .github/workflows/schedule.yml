@@ -20,5 +20,5 @@ jobs:
         run: npm run status
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: d053847bdfb018d8e22f1ddd7caddfc4
+          GIST_ID: fccf32855105764135290761c8e815e6
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
